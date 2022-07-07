@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Listagem de Currículos</h1>
+
+<%= link_to "Novo currículo", new_resume_path , class: "btn btn-success"%>
+<br><br>
+
+<div id="resumes">
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>Listar</th>
+      <th>Editar</th>
+      <th>Remover</th>
+    </tr>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.name %></td>
+        <td><%= resume.email %></td>
+        <td><%= link_to "Ver currículo", resume%></td>
+        <td><%= link_to "Editar currículo", edit_resume_path(resume) , class: "btn btn-edit"%></td>
+        <td><%= button_to "Remover currículo", resume, method: :delete, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

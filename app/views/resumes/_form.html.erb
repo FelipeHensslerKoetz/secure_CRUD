@@ -1,0 +1,43 @@
+<%= form_with(model: resume) do |form| %>
+  <% if resume.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(resume.errors.count, "erro(s)") %> proibiram este currículo de ser salvo:</h2>
+
+      <ul>
+        <% resume.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+    <br>
+  <div>
+    <%= form.label :website, style: "display: block" %>
+    <%= form.text_field :website %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :professional_experience, style: "display: block" %>
+    <%= form.text_field :professional_experience %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%# XSS problem! %>
+<%# <script>alert("This is a XSS attack!")</script> %>
+<%# <%= raw @resume.name %>
+<%# <%= @resume.name.html_safe %>
+
+<%= render @resume %>
+
+<div>
+  <%= link_to "Voltar para listagem de currículos", resumes_path, class: "btn btn-default" %>
+</div>
